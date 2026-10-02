@@ -2,23 +2,41 @@
 <html lang="en" class="is-loading">
 <head>
 <meta charset="UTF-8" />
-<meta property="og:url" content="https://aryan7138.github.io/OSMO/grix.html">
-<meta name="twitter:title" content="GRIX — We Offer You What You Deserve">
-<meta name="twitter:description" content="Premium unisex clothing from Dhaka. Custom fits, honest fabric, delivery to all 64 districts.">
-<meta name="twitter:image" content="https://aryan7138.github.io/OSMO/grix-logo2.jpg">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>GRIX — We Offer You What You Deserve</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="GRIX is a premium clothing brand from Bangladesh. We offer quality, customisation, and fast delivery across 64 districts." />
 <meta name="theme-color" content="#f1ece2" />
-<link rel="icon" type="image/x-icon" href="favicon.ico">
 
-<!-- Social sharing — replace grix-logo2.jpg with an ABSOLUTE URL (https://yourdomain.com/grix-logo2.jpg) before going live -->
+<!-- <meta name="google-site-verification" content="REPLACE_WITH_YOUR_CODE" /> -->
+
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="GRIX" />
+<meta property="og:url" content="https://grixbd.github.io/explore-on/" />
 <meta property="og:title" content="GRIX — We Offer You What You Deserve" />
 <meta property="og:description" content="Premium unisex clothing from Dhaka. Custom fits, honest fabric, delivery to all 64 districts." />
-<meta property="og:image" content="https://aryan7138.github.io/OSMO/grix-logo2.jpg">
+<meta property="og:image" content="https://grixbd.github.io/explore-on/grix-logo2.jpg" />
+<meta property="og:image:alt" content="GRIX — premium unisex clothing from Dhaka, Bangladesh" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@_grixbd" />
+<meta name="twitter:creator" content="@_grixbd" />
+<meta name="twitter:title" content="GRIX — We Offer You What You Deserve" />
+<meta name="twitter:description" content="Premium unisex clothing from Dhaka. Custom fits, honest fabric, delivery to all 64 districts." />
+<meta name="twitter:image" content="https://grixbd.github.io/explore-on/grix-logo2.jpg" />
+<meta name="twitter:image:alt" content="GRIX — premium unisex clothing from Dhaka, Bangladesh" />
+
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e64522" />
+<link rel="manifest" href="site.webmanifest" />
+<meta name="msapplication-TileColor" content="#f1ece2" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,10 +44,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link rel="preload" as="image" href="grix-logo2.jpg" fetchpriority="high" />
 <style>
-/* ============================================================
-   RESET + TOKENS
-============================================================ */
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+button{
+    font:inherit;
+    color:inherit;
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    text-align:inherit;
+}
 
 :root{
     --bone:#f1ece2;
@@ -68,9 +93,6 @@ body{
 .serif{font-family:'Playfair Display',serif}
 .mono{font-family:'Space Grotesk',sans-serif}
 
-/* ============================================================
-   ROOT
-============================================================ */
 .root-container{
     width:100%;
     height:100vh;
@@ -80,9 +102,6 @@ body{
     background:var(--bone);
 }
 
-/* ============================================================
-   PRELOADER
-============================================================ */
 html.is-loading,
 html.is-loading body{
     overflow:hidden !important;
@@ -98,7 +117,6 @@ html.is-loading body{
     align-items:center;
     justify-content:center;
     transition:transform 1s var(--ease), visibility 0s 1s;
-    will-change:transform;
 }
 .preloader::before{
     content:'';
@@ -197,9 +215,6 @@ html.is-loading body{
     font-variant-numeric:tabular-nums;
 }
 
-/* ============================================================
-   HOLD HERO CHOREOGRAPHY UNTIL THE PRELOADER LIFTS
-============================================================ */
 html.is-loading .hero-header,
 html.is-loading .kicker,
 html.is-loading .hero-title .line-inner,
@@ -220,9 +235,6 @@ html.is-loading .feat{
     .preloader-meta{animation:none;opacity:1;transform:none}
 }
 
-/* ============================================================
-   MAIN SLIDE
-============================================================ */
 .main-slide{
     width:100%;height:100%;
     position:relative;
@@ -232,7 +244,6 @@ html.is-loading .feat{
     background:var(--bone);
     transition:transform .9s var(--ease),
                width .9s var(--ease);
-    will-change:transform,width;
 }
 .main-slide::after{
     content:'';
@@ -250,10 +261,6 @@ html.is-loading .feat{
 }
 .main-slide.menu-open::after{opacity:.14}
 
-/* ============================================================
-   SCROLL PROGRESS HAIRLINE
-   z-index 2: above the slide, below the panel (3) and overlays
-============================================================ */
 .scroll-progress{
     position:fixed;
     top:0;left:0;right:0;
@@ -265,9 +272,6 @@ html.is-loading .feat{
     pointer-events:none;
 }
 
-/* ============================================================
-   SCROLL VIEWPORT
-============================================================ */
 .scroll-viewport{
     width:100%;
     height:100%;
@@ -279,9 +283,6 @@ html.is-loading .feat{
     position:relative;
 }
 
-/* ============================================================
-   HERO
-============================================================ */
 .hero{
     position:relative;
     width:100%;
@@ -360,12 +361,13 @@ html.is-loading .feat{
     0%,100%{opacity:1;transform:scale(1)}
     50%{opacity:.4;transform:scale(.65)}
 }
+
 .hero-nav{
     display:flex;
     align-items:center;
     gap:34px;
 }
-.hero-nav a{
+.hero-nav button{
     position:relative;
     color:var(--ink);
     text-decoration:none;
@@ -378,7 +380,7 @@ html.is-loading .feat{
     cursor:pointer;
     transition:color .35s var(--ease);
 }
-.hero-nav a::after{
+.hero-nav button::after{
     content:'';
     position:absolute;left:0;bottom:0;
     width:100%;height:1px;
@@ -386,12 +388,9 @@ html.is-loading .feat{
     transform:scaleX(0);transform-origin:right center;
     transition:transform .55s var(--ease);
 }
-.hero-nav a:hover{color:var(--accent)}
-.hero-nav a:hover::after{transform:scaleX(1);transform-origin:left center}
+.hero-nav button:hover{color:var(--accent)}
+.hero-nav button:hover::after{transform:scaleX(1);transform-origin:left center}
 
-/* ============================================================
-   HAMBURGER — sits inside the header, scrolls with page
-============================================================ */
 .hamburger{
     position:relative;
     width:38px;
@@ -574,7 +573,6 @@ html.is-loading .feat{
     overflow:hidden;
     background:var(--ink);
 }
-/* hatch texture — shows through if the photo fails to load */
 .hero-frame::before{
     content:'';
     position:absolute;inset:0;
@@ -681,7 +679,6 @@ html.is-loading .feat{
     padding:0 4px;
 }
 @keyframes marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-/* pause on hover — real pointers only, no sticky pause on touch */
 @media (hover:hover) and (pointer:fine){
     .marquee:hover .marquee-track{animation-play-state:paused}
 }
@@ -691,6 +688,7 @@ html.is-loading .feat{
     grid-template-columns:repeat(5,1fr);
     background:var(--bone);
     border-bottom:1px solid var(--line);
+    overscroll-behavior-x:contain;
     opacity:0;
     animation:rise .9s var(--ease) 1.3s forwards;
 }
@@ -737,9 +735,6 @@ html.is-loading .feat{
     line-height:1.5;
 }
 
-/* ============================================================
-   SCROLL REVEAL (added by JS — no-JS users see everything)
-============================================================ */
 .sr{
     opacity:0;
     transform:translateY(26px);
@@ -747,7 +742,6 @@ html.is-loading .feat{
                transform .75s var(--ease) var(--d,0s);
 }
 .sr.sr-in{opacity:1;transform:none}
-/* keep the FAQ bg-tint transition alive alongside the reveal */
 .faq-item.sr{
     transition:opacity .75s var(--ease) var(--d,0s),
                transform .75s var(--ease) var(--d,0s),
@@ -757,9 +751,6 @@ html.is-loading .feat{
     .sr{opacity:1;transform:none;transition:none}
 }
 
-/* ============================================================
-   BACK TO TOP
-============================================================ */
 .to-top{
     position:fixed;
     bottom:26px;right:26px;
@@ -774,13 +765,23 @@ html.is-loading .feat{
     opacity:0;
     transform:translateY(14px);
     pointer-events:none;
+    visibility:hidden;
     transition:opacity .45s var(--ease),
                transform .45s var(--ease),
+               visibility 0s .45s,
                background-color .35s var(--ease);
 }
-.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top.show{
+    opacity:1;
+    transform:none;
+    pointer-events:auto;
+    visibility:visible;
+    transition:opacity .45s var(--ease),
+               transform .45s var(--ease),
+               visibility 0s 0s,
+               background-color .35s var(--ease);
+}
 .to-top:hover{background:var(--accent)}
-/* hide while the menu panel or any overlay is up (siblings in DOM) */
 .side-panel.open ~ .to-top,
 .explore-section.open ~ .to-top,
 .about-section.open ~ .to-top,
@@ -788,11 +789,12 @@ html.is-loading .feat{
     opacity:0;
     transform:translateY(14px);
     pointer-events:none;
+    visibility:hidden;
+    transition:opacity .3s var(--ease),
+               transform .3s var(--ease),
+               visibility 0s .3s;
 }
 
-/* ============================================================
-   GENERIC SECTION BLOCK
-============================================================ */
 .section-block{
     position:relative;
     padding:clamp(70px,10vh,120px) clamp(24px,4vw,56px);
@@ -869,9 +871,6 @@ html.is-loading .feat{
 }
 .section-meta span{display:block}
 
-/* ============================================================
-   FAQ
-============================================================ */
 .faq-list{
     display:flex;
     flex-direction:column;
@@ -936,7 +935,6 @@ html.is-loading .feat{
     color:var(--muted);
 }
 
-/* smooth expand/collapse — progressive enhancement (Chromium 131+) */
 @supports (interpolate-size: allow-keywords){
     :root{interpolate-size:allow-keywords}
     .faq-item::details-content{
@@ -948,9 +946,6 @@ html.is-loading .feat{
     .faq-item[open]::details-content{block-size:auto}
 }
 
-/* ============================================================
-   FOOTER
-============================================================ */
 .site-footer{
     background:var(--ink);
     color:var(--bone);
@@ -1023,7 +1018,6 @@ html.is-loading .feat{
 .footer-col ul{list-style:none}
 .footer-col li{margin-bottom:12px}
 
-/* UPDATED CSS FOR FOOTER ICONS */
 .footer-col a {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
@@ -1081,9 +1075,6 @@ html.is-loading .feat{
 .footer-meta a:hover{color:var(--accent)}
 .footer-sep{color:rgba(241,236,226,.2)}
 
-/* ============================================================
-   SIDE PANEL
-============================================================ */
 .side-panel{
     position:fixed;
     top:0;right:0;
@@ -1097,7 +1088,6 @@ html.is-loading .feat{
     padding:52px clamp(28px,3.2vw,56px);
     transform:translateX(100%);
     transition:transform .9s var(--ease);
-    will-change:transform;
     overflow:hidden;
 }
 .side-panel::before{
@@ -1139,10 +1129,13 @@ html.is-loading .feat{
     display:flex;
     align-items:baseline;
     justify-content:space-between;
+    width:100%;
     padding:22px 0;
     text-decoration:none;
     color:var(--bone);
     border-bottom:1px solid rgba(241,236,226,.12);
+    font-family:inherit;
+    text-align:left;
     opacity:0;
     transform:translateX(40px);
     transition:padding-left .55s var(--ease),border-color .4s;
@@ -1214,14 +1207,6 @@ html.is-loading .feat{
 }
 .panel-foot a:hover{color:var(--accent)}
 
-/* ============================================================
-   FULL-SCREEN SECTIONS (overlays)
-   ── CURTAIN WIPE ──
-   The panel is clipped to a hairline at its bottom edge and
-   wipes upward on open, matching the preloader's lift direction.
-   clip-path is animatable everywhere modern; visibility is
-   deferred so the panel stays out of the a11y tree while hidden.
-============================================================ */
 .explore-section,
 .about-section,
 .contact-section{
@@ -1235,7 +1220,6 @@ html.is-loading .feat{
     background:var(--bone);
     color:var(--ink);
     visibility:hidden;
-    /* closed: clipped to nothing, anchored at the bottom edge */
     clip-path:inset(100% 0 0 0);
     transition:clip-path 1s var(--ease),
                visibility 0s 1s;
@@ -1245,7 +1229,6 @@ html.is-loading .feat{
 .explore-section.open,
 .about-section.open,
 .contact-section.open{
-    /* open: full reveal */
     clip-path:inset(0 0 0 0);
     visibility:visible;
     transition:clip-path 1s var(--ease),
@@ -1705,7 +1688,6 @@ html.is-loading .feat{
 }
 .contact-option:hover .arrow{color:var(--accent);transform:translateX(6px)}
 
-/* copy-to-clipboard row */
 .copy-row{
     display:flex;
     align-items:center;
@@ -1770,9 +1752,6 @@ html.is-loading .feat{
     color:var(--ink);
 }
 
-/* ============================================================
-   KEYFRAMES + KEYBOARD FOCUS
-============================================================ */
 @keyframes rise{to{opacity:1;transform:translateY(0)}}
 @keyframes riseDown{
     from{opacity:0;transform:translateY(-16px)}
@@ -1781,9 +1760,6 @@ html.is-loading .feat{
 
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
 @media (max-width:1180px){
     .hero-meta{margin-left:20px;font-size:10px}
     .hero-nav{gap:24px}
@@ -1835,6 +1811,7 @@ html.is-loading .feat{
         -webkit-overflow-scrolling:touch;
         scrollbar-width:none;
         scroll-snap-type:x mandatory;
+        overscroll-behavior-x:contain;
     }
     .features::-webkit-scrollbar{display:none}
     .feat{padding:18px 16px;scroll-snap-align:start}
@@ -1902,7 +1879,6 @@ html.is-loading .feat{
 </head>
 <body>
 
-<!-- No-JS fallback: skip the preloader and let hero animations run -->
 <noscript>
     <style>
         .preloader{display:none}
@@ -1910,10 +1886,9 @@ html.is-loading .feat{
     </style>
 </noscript>
 
-<!-- ══════════ PRELOADER ══════════ -->
 <div class="preloader" id="preloader" role="status" aria-label="Loading GRIX">
-    <div class="preloader-inner">
-        <div class="preloader-brand" aria-hidden="true">
+    <div class="preloader-inner" aria-hidden="true">
+        <div class="preloader-brand">
             <span style="--i:0">G</span>
             <span style="--i:1">R</span>
             <span style="--i:2">I</span>
@@ -1935,14 +1910,13 @@ html.is-loading .feat{
     <div class="main-slide" id="mainSlide">
         <div class="scroll-viewport">
 
-            <!-- ══════════ HERO ══════════ -->
             <section class="hero">
                 <header class="hero-header">
                     <div class="logo">GRIX</div>
                     <div class="hero-meta">Dhaka · Bangladesh · Est. 2026</div>
                     <nav class="hero-nav" aria-label="Main navigation">
-                        <a href="#" class="contact-link" role="button">Contact</a>
-                        <a href="#" class="about-link" role="button">About</a>
+                        <button type="button" class="contact-link">Contact</button>
+                        <button type="button" class="about-link">About</button>
                     </nav>
                     <button class="hamburger" id="hamburger" type="button"
                             aria-label="Toggle menu" aria-expanded="false" aria-controls="sidePanel">
@@ -1974,13 +1948,14 @@ html.is-loading .feat{
                                 <span>Explore us</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
-                            <a href="#" class="btn-ghost contact-link">Contact</a>
+                            <button type="button" class="btn-ghost contact-link">Contact</button>
                         </div>
                     </div>
 
                     <div class="hero-visual">
                         <div class="hero-frame">
-                            <img src="grix-logo2.jpg" alt="GRIX Lookbook" class="hero-img"
+                            <img src="grix-logo2.jpg" alt="GRIX premium unisex clothing lookbook"
+                                 class="hero-img"
                                  onerror="this.onerror=null;this.style.display='none'" />
                             <div class="frame-label">
                                 <span class="l">Trust us first.<br>We never break it.</span>
@@ -2041,7 +2016,6 @@ html.is-loading .feat{
                 </div>
             </section>
 
-            <!-- ══════════ 02 · FAQ ══════════ -->
             <section class="section-block" id="faq">
                 <div class="section-inner">
                     <div class="section-head">
@@ -2123,7 +2097,6 @@ html.is-loading .feat{
                 </div>
             </section>
 
-            <!-- ══════════ FOOTER ══════════ -->
             <footer class="site-footer">
                 <div class="footer-main">
                     <div class="footer-brand">
@@ -2165,13 +2138,11 @@ html.is-loading .feat{
                 </div>
             </footer>
 
-        </div><!-- /scroll-viewport -->
-    </div><!-- /main-slide -->
+        </div>
+    </div>
 
-    <!-- scroll progress hairline (sits under panel & overlays) -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-    <!-- ══════════ SIDE PANEL ══════════ -->
     <aside class="side-panel" id="sidePanel" aria-label="Menu">
         <div class="panel-top">
             <span class="panel-label">GRIX</span>
@@ -2179,21 +2150,21 @@ html.is-loading .feat{
         </div>
 
         <nav class="panel-nav">
-            <a href="#" class="panel-link panel-explore" style="--i:0">
+            <button type="button" class="panel-link panel-explore" style="--i:0">
                 <span class="idx">01</span>
                 <span class="name">Explore</span>
                 <span class="arrow">→</span>
-            </a>
-            <a href="#" class="panel-link about-link" style="--i:1">
+            </button>
+            <button type="button" class="panel-link about-link" style="--i:1">
                 <span class="idx">02</span>
                 <span class="name">About</span>
                 <span class="arrow">→</span>
-            </a>
-            <a href="#" class="panel-link contact-link" style="--i:2">
+            </button>
+            <button type="button" class="panel-link contact-link" style="--i:2">
                 <span class="idx">03</span>
                 <span class="name">Contact</span>
                 <span class="arrow">→</span>
-            </a>
+            </button>
         </nav>
 
         <div class="panel-foot">
@@ -2208,13 +2179,12 @@ html.is-loading .feat{
         </div>
     </aside>
 
-    <!-- ══════════ EXPLORE OVERLAY ══════════ -->
     <section class="explore-section" id="exploreSection" role="dialog" aria-modal="true" aria-label="Explore us">
         <header class="section-header">
             <div class="logo">GRIX</div>
             <nav class="hero-nav" aria-label="Explore section navigation">
-                <a href="#" class="contact-link">Contact</a>
-                <a href="#" class="about-link">About</a>
+                <button type="button" class="contact-link">Contact</button>
+                <button type="button" class="about-link">About</button>
             </nav>
             <button class="close-btn" id="exploreClose" type="button" aria-label="Close explore">
                 <span></span><span></span>
@@ -2287,13 +2257,12 @@ html.is-loading .feat{
         </div>
     </section>
 
-    <!-- ══════════ ABOUT OVERLAY ══════════ -->
     <section class="about-section" id="aboutSection" role="dialog" aria-modal="true" aria-label="About us">
         <header class="section-header">
             <div class="logo">GRIX</div>
             <nav class="hero-nav" aria-label="About section navigation">
-                <a href="#" class="contact-link">Contact</a>
-                <a href="#" class="about-link">About</a>
+                <button type="button" class="contact-link">Contact</button>
+                <button type="button" class="about-link">About</button>
             </nav>
             <button class="close-btn" id="aboutClose" type="button" aria-label="Close about">
                 <span></span><span></span>
@@ -2352,21 +2321,20 @@ html.is-loading .feat{
                     <div class="stat-label">Clients</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-idx">003 — BANGLADESH</div>
-                    <div class="stat-num"><span data-count="62">0</span><em></em></div>
-                    <div class="stat-label">DISTRICT</div>
+                    <div class="stat-idx">003 — Bangladesh</div>
+                    <div class="stat-num"><span data-count="64">0</span><em>+</em></div>
+                    <div class="stat-label">Districts</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ══════════ CONTACT OVERLAY ══════════ -->
     <section class="contact-section" id="contactSection" role="dialog" aria-modal="true" aria-label="Contact us">
         <header class="section-header">
             <div class="logo">GRIX</div>
             <nav class="hero-nav" aria-label="Contact section navigation">
-                <a href="#" class="contact-link">Contact</a>
-                <a href="#" class="about-link">About</a>
+                <button type="button" class="contact-link">Contact</button>
+                <button type="button" class="about-link">About</button>
             </nav>
             <button class="close-btn" id="contactClose" type="button" aria-label="Close contact">
                 <span></span><span></span>
@@ -2434,7 +2402,6 @@ html.is-loading .feat{
         </div>
     </section>
 
-    <!-- ══════════ BACK TO TOP ══════════ -->
     <button class="to-top" id="toTop" type="button" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -2442,9 +2409,6 @@ html.is-loading .feat{
 </div>
 
 <script>
-/* ============================================================
-   PRELOADER — waits for actual image decode
-============================================================ */
 (function(){
     const preloader = document.getElementById('preloader');
     const fill      = document.getElementById('preloaderBarFill');
@@ -2554,9 +2518,6 @@ html.is-loading .feat{
     }, MAX_TIME);
 })();
 
-/* ============================================================
-   DOM
-============================================================ */
 const hamburger      = document.getElementById('hamburger');
 const mainSlide      = document.getElementById('mainSlide');
 const sidePanel      = document.getElementById('sidePanel');
@@ -2574,20 +2535,16 @@ const contactSection = document.getElementById('contactSection');
 const contactClose   = document.getElementById('contactClose');
 const panelExplore   = document.querySelector('.panel-explore');
 
+const overlays = [exploreSection, aboutSection, contactSection];
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ============================================================
-   STATE
-============================================================ */
 let currentSlide = 'home';
 let isNavigating = false;
 let lastFocused  = null;
 
 history.replaceState({ slide: 'home' }, '', '');
 
-/* ============================================================
-   HELPERS
-============================================================ */
 function updateAriaExpanded(expanded) {
     hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
 }
@@ -2595,6 +2552,7 @@ function updateAriaExpanded(expanded) {
 function setBackdropInert(on) {
     mainSlide.inert = on;
     sidePanel.inert = on;
+    if (toTopBtn) toTopBtn.inert = on;
 }
 
 function closeAllSlides() {
@@ -2657,7 +2615,11 @@ function openSlideVisual(slideName) {
 
 function openSlide(slideName) {
     if (currentSlide === slideName) return;
-    history.pushState({ slide: slideName }, '', '');
+    if (currentSlide === 'home') {
+        history.pushState({ slide: slideName }, '', '');
+    } else {
+        history.replaceState({ slide: slideName }, '', '');
+    }
     openSlideVisual(slideName);
     currentSlide = slideName;
 }
@@ -2676,9 +2638,29 @@ function closeSlide() {
     }
 }
 
-/* ============================================================
-   SCROLL: progress hairline + back-to-top
-============================================================ */
+function trapFocus(container, e) {
+    const focusables = container.querySelectorAll(
+        'a[href], button:not([disabled]):not([hidden]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    if (!focusables.length) return;
+    const first  = focusables[0];
+    const last   = focusables[focusables.length - 1];
+    const active = document.activeElement;
+    const outside = !container.contains(active);
+
+    if (e.shiftKey && (active === first || outside)) {
+        e.preventDefault();
+        last.focus();
+    } else if (!e.shiftKey && (active === last || outside)) {
+        e.preventDefault();
+        first.focus();
+    }
+}
+
+function openOverlay() {
+    return overlays.find(s => s.classList.contains('open')) || null;
+}
+
 (function(){
     if (!scrollViewport) return;
 
@@ -2707,9 +2689,6 @@ function closeSlide() {
     }
 })();
 
-/* ============================================================
-   SCROLL REVEAL — below-the-fold sections fade up once
-============================================================ */
 (function(){
     if (reduceMotion || !('IntersectionObserver' in window)) return;
 
@@ -2739,9 +2718,6 @@ function closeSlide() {
     });
 })();
 
-/* ============================================================
-   FAQ DEEP LINKS — #faq-delivery / #faq-returns etc.
-============================================================ */
 function handleHash(){
     const id = location.hash.slice(1);
     if (!id) return;
@@ -2756,9 +2732,6 @@ function handleHash(){
 window.addEventListener('hashchange', handleHash);
 handleHash();
 
-/* ============================================================
-   COPY EMAIL
-============================================================ */
 (function(){
     const btn = document.getElementById('copyEmailBtn');
     if (!btn) return;
@@ -2791,9 +2764,6 @@ handleHash();
     });
 })();
 
-/* ============================================================
-   HISTORY
-============================================================ */
 window.addEventListener('popstate', (e) => {
     const state = e.state;
     if (!state || state.slide === 'home') {
@@ -2807,15 +2777,10 @@ window.addEventListener('popstate', (e) => {
     isNavigating = false;
 });
 
-/* ============================================================
-   EVENTS
-============================================================ */
 hamburger.addEventListener('click', (e) => {
     e.stopPropagation();
 
-    const anyOpen = exploreSection.classList.contains('open') ||
-                    aboutSection.classList.contains('open') ||
-                    contactSection.classList.contains('open');
+    const anyOpen = !!openOverlay();
     if (anyOpen) {
         closeSlide();
     } else {
@@ -2833,30 +2798,33 @@ mainSlide.addEventListener('click', () => {
 });
 
 document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
-    if (currentSlide !== 'home') { closeSlide(); return; }
-    if (hamburger.classList.contains('active')) hamburger.click();
+    if (e.key === 'Escape') {
+        if (currentSlide !== 'home') { closeSlide(); return; }
+        if (hamburger.classList.contains('active')) hamburger.click();
+        return;
+    }
+    if (e.key === 'Tab') {
+        const open = openOverlay();
+        if (open) trapFocus(open, e);
+    }
 });
 
 exploreBtn.addEventListener('click', () => openSlide('explore'));
 exploreClose.addEventListener('click', () => closeSlide());
 
 if (panelExplore) {
-    panelExplore.addEventListener('click', (e) => {
-        e.preventDefault();
-        openSlide('explore');
-    });
+    panelExplore.addEventListener('click', () => openSlide('explore'));
 }
 
 aboutLinks.forEach(link => {
-    link.addEventListener('click', (e) => { e.preventDefault(); openSlide('about'); });
+    link.addEventListener('click', () => openSlide('about'));
 });
 aboutClose.addEventListener('click', () => closeSlide());
 
 contactLinks.forEach(link => {
-    link.addEventListener('click', (e) => { e.preventDefault(); openSlide('contact'); });
+    link.addEventListener('click', () => openSlide('contact'));
 });
 contactClose.addEventListener('click', () => closeSlide());
 </script>
 </body>
-  </html>
+</html>
