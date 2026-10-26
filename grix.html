@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 
 <title>GRIX — We Offer You What You Deserve</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <meta name="description" content="GRIX is a premium clothing brand from Bangladesh. We offer quality, customisation, and fast delivery across 64 districts." />
 <meta name="theme-color" content="#f1ece2" />
 
@@ -72,7 +72,7 @@ button{
     --ease:cubic-bezier(.22,1,.36,1);
 }
 
-html,body{width:100%;height:100%;overflow:hidden}
+html,body{width:100%;height:100%;overflow:hidden;overflow-x:hidden;margin:0;padding:0;}
 body{
     background:var(--bone);
     font-family:'Inter',sans-serif;
@@ -80,6 +80,7 @@ body{
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
     font-feature-settings:"ss01","cv11";
+    word-break:break-word;
 }
 
 ::selection{background:var(--ink);color:var(--bone)}
@@ -99,6 +100,7 @@ body{
     position:relative;
     overflow:hidden;
     background:var(--bone);
+    max-width:100vw;
 }
 
 html.is-loading,
@@ -129,6 +131,7 @@ html.is-loading body{
 .preloader.is-done{
     transform:translate3d(0,-100%,0);
     visibility:hidden;
+    pointer-events:none;
 }
 
 .preloader-inner{
@@ -235,14 +238,15 @@ html.is-loading .feat{
 }
 
 .main-slide{
-    width:100%;height:100%;
+    width:100%;
+    max-width:100vw;
+    height:100%;
     position:relative;
     z-index:2;
     transform-origin:left center;
     overflow:hidden;
     background:var(--bone);
-    transition:transform .9s var(--ease),
-               width .9s var(--ease);
+    transition:transform .9s var(--ease);
 }
 .main-slide::after{
     content:'';
@@ -254,9 +258,7 @@ html.is-loading .feat{
     transition:opacity .9s var(--ease);
 }
 .main-slide.menu-open{
-    transform:scale(.94) translateX(-3%);
-    width:68%;
-    box-shadow:-50px 0 100px rgba(0,0,0,.35);
+    transform:scale(.94) translate3d(-3%, 0, 0);
 }
 .main-slide.menu-open::after{opacity:.14}
 
@@ -273,6 +275,7 @@ html.is-loading .feat{
 
 .scroll-viewport{
     width:100%;
+    max-width:100vw;
     height:100%;
     overflow-y:auto;
     overflow-x:hidden;
@@ -317,7 +320,6 @@ html.is-loading .feat{
     gap:20px;
 }
 
-/* Updated Logo Styles */
 .logo{
     display:flex;
     align-items:center;
@@ -425,7 +427,8 @@ html.is-loading .feat{
     align-items:center;
     overflow:hidden;
 }
-.hero-text{display:flex;flex-direction:column;max-width:640px}
+.hero-text{display:flex;flex-direction:column;max-width:640px;min-width:0;}
+.hero-visual{min-width:0;}
 
 .kicker{
     display:flex;
@@ -646,6 +649,8 @@ html.is-loading .feat{
     background:var(--bone);
     opacity:0;
     animation:rise .9s var(--ease) 1.15s forwards;
+    width:100%;
+    max-width:100vw;
 }
 .marquee-track{
     display:flex;
@@ -1135,7 +1140,7 @@ html.is-loading .feat{
 .side-panel{
     position:fixed;
     top:0;right:0;
-    width:32%;
+    width:clamp(320px, 32vw, 480px);
     height:100vh;height:100dvh;
     background:var(--ink);
     color:var(--bone);
@@ -1143,9 +1148,10 @@ html.is-loading .feat{
     display:flex;
     flex-direction:column;
     padding:52px clamp(28px,3.2vw,56px);
-    transform:translateX(100%);
+    transform:translate3d(100%,0,0);
     transition:transform .9s var(--ease);
     overflow:hidden;
+    pointer-events:none;
 }
 .side-panel::before{
     content:'';
@@ -1154,7 +1160,7 @@ html.is-loading .feat{
     background-size:25% 100%;
     pointer-events:none;
 }
-.side-panel.open{transform:translateX(0)}
+.side-panel.open{transform:translate3d(0,0,0);pointer-events:auto;}
 .side-panel > *{position:relative;z-index:1}
 
 .panel-top{
@@ -1181,6 +1187,12 @@ html.is-loading .feat{
     flex-direction:column;
     justify-content:center;
     padding:40px 0;
+    overflow-y:auto;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+}
+.panel-nav::-webkit-scrollbar {
+    display:none;
 }
 .panel-link{
     display:flex;
@@ -1829,8 +1841,7 @@ html.is-loading .feat{
 @media (max-width:1024px){
     .hero-grid{grid-template-columns:1fr 1fr;gap:32px}
     .hero-title{font-size:clamp(42px,6.4vw,84px)}
-    .side-panel{width:38%}
-    .main-slide.menu-open{width:62%}
+    .side-panel{width:clamp(320px, 38vw, 480px)}
     .footer-main{grid-template-columns:1fr 1fr;gap:40px}
     .footer-brand{grid-column:span 2}
 }
@@ -1851,7 +1862,6 @@ html.is-loading .feat{
     .hero-meta{display:none}
     .hero-nav{display:none}
     
-    /* Updated Logo Mobile Sizes */
     .logo-img { height:22px; }
     .section-header .logo-img { height:18px; }
 
@@ -1859,7 +1869,7 @@ html.is-loading .feat{
     .hamburger.active span:nth-child(1){transform:translateY(5px) rotate(45deg)}
     .hamburger.active span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
-    .main-slide.menu-open{transform:scale(.9) translateX(-4%);width:100%}
+    .main-slide.menu-open{transform:scale(.9) translate3d(-4%, 0, 0);}
     .side-panel{width:86%;padding:36px 26px}
     .panel-link .name{font-size:clamp(22px,5.4vw,30px)}
 
@@ -2051,14 +2061,14 @@ button.btn-primary-lg{
 
 .ref-h2 {
     font-family: 'Tiro Bangla', serif;
-    font-size: 30px; /* Mod: Slightly bigger */
+    font-size: 30px;
     font-weight: 400;
     margin: 40px 0 16px;
     color: #111111;
 }
 
 .ref-p {
-    font-size: 19px; /* Mod: Slightly bigger */
+    font-size: 19px;
     line-height: 1.75;
     color: #2a2a2a;
     margin-bottom: 16px;
@@ -2067,7 +2077,7 @@ button.btn-primary-lg{
 .ref-highlight {
     color: #e85d3d;
     font-weight: 500;
-    font-size: 1.05em; /* Mod: Slightly bigger */
+    font-size: 1.05em;
 }
 
 .ref-ul {
@@ -2077,7 +2087,7 @@ button.btn-primary-lg{
 }
 
 .ref-ul li {
-    font-size: 19px; /* Mod: Slightly bigger */
+    font-size: 19px;
     line-height: 1.75;
     color: #2a2a2a;
     position: relative;
@@ -2133,8 +2143,8 @@ button.btn-primary-lg{
 @media (max-width: 600px) {
     .ref-container { padding: 0 20px 60px; }
     .ref-h1 { font-size: 38px; }
-    .ref-h2 { font-size: 26px; } /* Mod: adjusted for mobile */
-    .ref-p, .ref-ul li { font-size: 17px; } /* Mod: adjusted for mobile */
+    .ref-h2 { font-size: 26px; }
+    .ref-p, .ref-ul li { font-size: 17px; }
     .ref-btn { width: 100%; max-width: none; }
 }
 
@@ -2164,9 +2174,9 @@ button.btn-primary-lg{
 .install-pill .install-go:hover{color:var(--accent)}
 .install-pill .install-x{display:inline-flex;align-items:center;justify-content:center;width:38px;height:100%;color:rgba(241,236,226,.45);font-size:13px;cursor:pointer;transition:color .35s var(--ease)}
 .install-pill .install-x:hover{color:var(--bone)}
-.cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:1300;background:var(--ink);color:var(--bone);display:flex;align-items:center;justify-content:center;gap:26px;padding:15px clamp(20px,4vw,40px);flex-wrap:wrap;transform:translateY(110%);transition:transform .7s var(--ease)}
+.cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:1300;background:var(--ink);color:var(--bone);display:flex;align-items:center;justify-content:center;gap:26px;padding:15px clamp(20px,4vw,40px);flex-wrap:wrap;transform:translateY(110%);transition:transform .7s var(--ease);max-width:100vw;box-sizing:border-box;}
 .cookie-bar.show{transform:translateY(0)}
-.cookie-bar p{font-size:12.5px;line-height:1.55;color:rgba(241,236,226,.72);max-width:660px;margin:0}
+.cookie-bar p{font-size:12.5px;line-height:1.55;color:rgba(241,236,226,.72);max-width:660px;margin:0;word-break:break-word;}
 .cookie-bar .ck-link{color:var(--bone);text-decoration:underline;text-underline-offset:3px;transition:color .3s}
 .cookie-bar .ck-link:hover{color:var(--accent)}
 .cookie-btn{padding:11px 22px;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background-color .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
@@ -2646,21 +2656,31 @@ button.btn-primary-lg{
         </div>
 
         <nav class="panel-nav">
-            <button type="button" class="panel-link about-link" style="--i:0">
+            <button type="button" class="panel-link stay-loop-link" style="--i:0">
+                <span class="idx">01</span>
+                <span class="name">Find and stay with us</span>
+                <span class="arrow">→</span>
+            </button>
+            <button type="button" class="panel-link about-link" style="--i:1">
                 <span class="idx">02</span>
                 <span class="name">About</span>
                 <span class="arrow">→</span>
             </button>
-            <button type="button" class="panel-link contact-link" style="--i:1">
+            <button type="button" class="panel-link contact-link" style="--i:2">
                 <span class="idx">03</span>
                 <span class="name">Contact</span>
                 <span class="arrow">→</span>
             </button>
-            <button type="button" class="panel-link referral-open" style="--i:2">
+            <button type="button" class="panel-link referral-open" style="--i:3">
                 <span class="idx">04</span>
                 <span class="name">Referral</span>
                 <span class="arrow">→</span>
             </button>
+            <a href="https://tally.so/r/kbbNrZ" target="_blank" rel="noopener noreferrer" class="panel-link" style="--i:4">
+                <span class="idx">05</span>
+                <span class="name">Buy Membership</span>
+                <span class="arrow">→</span>
+            </a>
         </nav>
 
         <div class="panel-foot">
@@ -3072,15 +3092,30 @@ function setBackdropInert(on) {
     if (toTopBtn) toTopBtn.inert = on;
 }
 
+function closeMenu() {
+    if(hamburger) hamburger.classList.remove('active');
+    if(mainSlide) mainSlide.classList.remove('menu-open');
+    if(sidePanel) sidePanel.classList.remove('open');
+    updateAriaExpanded(false);
+}
+
+function openMenu() {
+    if(hamburger) hamburger.classList.add('active');
+    if(mainSlide) mainSlide.classList.add('menu-open');
+    if(sidePanel) sidePanel.classList.add('open');
+    updateAriaExpanded(true);
+}
+
+// Ensure menu is always closed on initial load to prevent layout shift bugs
+window.addEventListener('load', closeMenu);
+window.addEventListener('pageshow', closeMenu);
+
 function closeAllSlides() {
     aboutSection.classList.remove('open');
     contactSection.classList.remove('open');
     referralSection.classList.remove('open');
-    hamburger.classList.remove('active');
-    mainSlide.classList.remove('menu-open');
-    sidePanel.classList.remove('open');
+    closeMenu();
     setBackdropInert(false);
-    updateAriaExpanded(false);
     if (lastFocused && lastFocused.isConnected) {
         lastFocused.focus({ preventScroll: true });
     }
@@ -3310,10 +3345,11 @@ hamburger.addEventListener('click', (e) => {
     if (anyOpen) {
         closeSlide();
     } else {
-        hamburger.classList.toggle('active');
-        mainSlide.classList.toggle('menu-open');
-        sidePanel.classList.toggle('open');
-        updateAriaExpanded(hamburger.classList.contains('active'));
+        if (mainSlide.classList.contains('menu-open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     }
 });
 
@@ -3358,6 +3394,17 @@ contactLinks.forEach(link => {
     link.addEventListener('click', () => openSlide('contact'));
 });
 contactClose.addEventListener('click', () => closeSlide());
+
+// Side panel: Find and stay with us
+document.querySelectorAll('.stay-loop-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+        closeMenu();
+        const el = document.getElementById('stay-in-loop');
+        if (el) {
+            el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        }
+    });
+});
 </script>
 
 <script>
