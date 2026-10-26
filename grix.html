@@ -8,13 +8,11 @@
 <meta name="description" content="GRIX is a premium clothing brand from Bangladesh. We offer quality, customisation, and fast delivery across 64 districts." />
 <meta name="theme-color" content="#f1ece2" />
 
-<!-- <meta name="google-site-verification" content="REPLACE_WITH_YOUR_CODE" /> -->
-
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="GRIX" />
-<meta property="og:url" content="https://grixbd.github.io/explore-on/" />
+<meta property="og:url" content="https://grixbd.github.io/explore-on/grix.html" />
 <meta property="og:title" content="GRIX — We Offer You What You Deserve" />
-<meta property="og:description" content="Premium unisex clothing from Dhaka. Custom fits, honest fabric, delivery to all 64 districts." />
+<meta property="og:description" content="GRIX is a Bangladesh-based unisex clothing brand. Discover our brand, story, and contact links." />
 <meta property="og:image" content="https://grixbd.github.io/explore-on/grix-logo2.jpg" />
 <meta property="og:image:alt" content="GRIX — premium unisex clothing from Dhaka, Bangladesh" />
 <meta property="og:image:width" content="1200" />
@@ -25,24 +23,23 @@
 <meta name="twitter:site" content="@_grixbd" />
 <meta name="twitter:creator" content="@_grixbd" />
 <meta name="twitter:title" content="GRIX — We Offer You What You Deserve" />
-<meta name="twitter:description" content="Premium unisex clothing from Dhaka. Custom fits, honest fabric, delivery to all 64 districts." />
+<meta name="twitter:description" content="GRIX is a Bangladesh-based unisex clothing brand. Discover our brand, story, and contact links." />
 <meta name="twitter:image" content="https://grixbd.github.io/explore-on/grix-logo2.jpg" />
 <meta name="twitter:image:alt" content="GRIX — premium unisex clothing from Dhaka, Bangladesh" />
 
 <link rel="icon" href="favicon.ico?v=1" sizes="any" />
-<!--
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e64522" />
-<link rel="manifest" href="site.webmanifest" />
--->
 <meta name="msapplication-TileColor" content="#f1ece2" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="grix-icon.jpg" />
+<meta name="application-name" content="GRIX" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="GRIX" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Tiro+Bangla:ital@0;1&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link rel="preload" as="image" href="grix-logo2.jpg" fetchpriority="high" />
 <style>
@@ -319,26 +316,19 @@ html.is-loading .feat{
     animation:riseDown .9s var(--ease) .05s forwards;
     gap:20px;
 }
+
+/* Updated Logo Styles */
 .logo{
-    font-family:'Playfair Display',serif;
-    font-weight:900;
-    font-size:26px;
-    letter-spacing:.02em;
-    line-height:1;
-    color:var(--ink);
     display:flex;
-    align-items:baseline;
-    gap:6px;
+    align-items:center;
 }
-.logo::after{
-    content:'®';
-    font-family:'Inter',sans-serif;
-    font-size:9px;
-    font-weight:500;
-    letter-spacing:.1em;
-    transform:translateY(-10px);
-    color:var(--accent);
+.logo-img{
+    height:26px;
+    width:auto;
+    display:block;
+    mix-blend-mode:multiply;
 }
+
 .hero-meta{
     font-family:'Space Grotesk',sans-serif;
     font-size:11px;
@@ -737,6 +727,68 @@ html.is-loading .feat{
     line-height:1.5;
 }
 
+/* ==================== PRODUCT GRID ==================== */
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:clamp(16px,2vw,26px);
+}
+.product-card{
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:var(--ink);
+    border:1px solid var(--line);
+    background:var(--bone);
+    overflow:hidden;
+    transition:border-color .45s var(--ease),
+               transform .45s var(--ease),
+               box-shadow .45s var(--ease);
+}
+.product-card:hover{
+    border-color:var(--ink);
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(14,14,14,.08);
+}
+.product-info{
+    padding:16px 18px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    border-top:1px solid var(--line);
+    flex:1;
+}
+.product-cat{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:9px;
+    font-weight:500;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+.product-name{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:17px;
+    line-height:1.25;
+    letter-spacing:-.01em;
+    color:var(--ink);
+}
+.product-price{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.08em;
+    color:var(--ink);
+    margin-top:auto;
+    padding-top:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+/* ==================== SECTION REVEAL ==================== */
+
 .sr{
     opacity:0;
     transform:translateY(26px);
@@ -787,7 +839,8 @@ html.is-loading .feat{
 .side-panel.open ~ .to-top,
 .explore-section.open ~ .to-top,
 .about-section.open ~ .to-top,
-.contact-section.open ~ .to-top{
+.contact-section.open ~ .to-top,
+.referral-section.open ~ .to-top{
     opacity:0;
     transform:translateY(14px);
     pointer-events:none;
@@ -1031,7 +1084,8 @@ html.is-loading .feat{
     gap: 12px;
     position: relative;
 }
-.footer-col a i {
+.footer-col a i,
+.footer-col a svg {
     font-size: 15px;
     width: 18px;
     text-align: center;
@@ -1041,7 +1095,8 @@ html.is-loading .feat{
     color: var(--accent);
     padding-left: 10px;
 }
-.footer-col a:hover i {
+.footer-col a:hover i,
+.footer-col a:hover svg {
     transform: scale(1.2);
     color: var(--accent);
 }
@@ -1211,7 +1266,8 @@ html.is-loading .feat{
 
 .explore-section,
 .about-section,
-.contact-section{
+.contact-section,
+.referral-section{
     position:fixed;
     inset:0;
     z-index:1100;
@@ -1230,7 +1286,8 @@ html.is-loading .feat{
 }
 .explore-section.open,
 .about-section.open,
-.contact-section.open{
+.contact-section.open,
+.referral-section.open{
     clip-path:inset(0 0 0 0);
     visibility:visible;
     transition:clip-path 1s var(--ease),
@@ -1239,7 +1296,8 @@ html.is-loading .feat{
 
 .explore-section::before,
 .about-section::before,
-.contact-section::before{
+.contact-section::before,
+.referral-section::before{
     content:'';
     position:absolute;inset:0;
     background-image:linear-gradient(90deg,var(--paper-line) 1px,transparent 1px);
@@ -1262,7 +1320,8 @@ html.is-loading .feat{
     background:var(--bone);
     border-bottom:1px solid var(--line);
 }
-.section-header .logo{font-size:22px}
+
+.section-header .logo-img { height: 22px; }
 .section-header .hero-nav{gap:30px;margin-left:auto}
 
 .close-btn{
@@ -1290,7 +1349,8 @@ html.is-loading .feat{
 .rv{opacity:0;transform:translateY(28px)}
 .explore-section.open .rv,
 .about-section.open .rv,
-.contact-section.open .rv{
+.contact-section.open .rv,
+.referral-section.open .rv{
     animation:rise .95s var(--ease) forwards;
     animation-delay:var(--d,0s);
 }
@@ -1790,7 +1850,10 @@ html.is-loading .feat{
     .hero-header{padding:20px 22px;gap:12px}
     .hero-meta{display:none}
     .hero-nav{display:none}
-    .logo{font-size:22px}
+    
+    /* Updated Logo Mobile Sizes */
+    .logo-img { height:22px; }
+    .section-header .logo-img { height:18px; }
 
     .hamburger{width:32px;height:12px;margin-left:0}
     .hamburger.active span:nth-child(1){transform:translateY(5px) rotate(45deg)}
@@ -1834,7 +1897,6 @@ html.is-loading .feat{
     .footer-bottom{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:10px}
 
     .section-header{height:66px;padding:0 20px;gap:14px}
-    .section-header .logo{font-size:18px}
     .section-header .hero-nav{display:none}
     .close-btn{width:38px;height:38px}
 
@@ -1853,6 +1915,15 @@ html.is-loading .feat{
 
     .to-top{bottom:18px;right:18px;width:44px;height:44px}
 }
+@media (max-width:640px){
+    .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    .product-info{padding:12px 12px 14px;gap:4px}
+    .product-name{font-size:14px;line-height:1.2}
+    .product-cat{font-size:8px;letter-spacing:.2em}
+    .product-price{font-size:10px;padding-top:8px}
+    .product-view{font-size:8px;letter-spacing:.2em}
+    .shop-social{margin-top:44px;padding-top:36px}
+}
 @media (max-width:520px){
     .hero-title{font-size:clamp(38px,10vw,56px)}
     .hero-visual{height:240px}
@@ -1867,6 +1938,206 @@ html.is-loading .feat{
     .footer-brand{grid-column:auto}
 }
 
+/* ============================================================
+   "Get some free" hero CTA — bigger + floating animation
+   ============================================================ */
+.btn-float-wrap{
+    display:inline-block;
+    animation:floatBtn 3.2s ease-in-out infinite;
+    animation-delay:2.2s;
+    will-change:transform;
+}
+@keyframes floatBtn{
+    0%,100%{transform:translateY(0)}
+    50%    {transform:translateY(-9px)}
+}
+button.btn-primary-lg{
+    padding:22px 42px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.24em;
+    box-shadow:0 8px 24px rgba(230,69,34,.18);
+}
+@media (max-width:768px){
+    button.btn-primary-lg{
+        padding:18px 30px;
+        font-size:12px;
+    }
+}
+@media (max-width:520px){
+    button.btn-primary-lg{
+        padding:16px 26px;
+        font-size:11px;
+    }
+}
+
+/* ============================================================
+   NEW REFERRAL & PREMIUM SECTION STYLES
+   ============================================================ */
+.referral-section {
+    background-color: #faf9f6;
+    background-image: repeating-linear-gradient(to right, transparent, transparent calc(16.66% - 1px), rgba(0, 0, 0, 0.025) calc(16.66% - 1px), rgba(0, 0, 0, 0.025) 16.66%);
+    background-position: center top;
+}
+
+.ref-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 680px;
+    padding: 0 24px 80px;
+    margin: 0 auto;
+    font-family: 'Tiro Bangla', serif;
+    color: #111111;
+}
+
+.ref-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 20px;
+    border-bottom: 1px solid #e6e2d8;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: #faf9f6;
+}
+
+.ref-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: flex-start;
+    color: #111;
+}
+
+.ref-logo span {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    margin-left: 3px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.ref-close-btn {
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 300;
+    color: #111;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    margin-right: -10px;
+    display: grid;
+    place-items: center;
+    transition: color .3s, transform .5s var(--ease);
+}
+.ref-close-btn:hover { color: var(--accent); transform: rotate(90deg); }
+
+.ref-h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    color: #111111;
+}
+
+.ref-h2 {
+    font-family: 'Tiro Bangla', serif;
+    font-size: 30px; /* Mod: Slightly bigger */
+    font-weight: 400;
+    margin: 40px 0 16px;
+    color: #111111;
+}
+
+.ref-p {
+    font-size: 19px; /* Mod: Slightly bigger */
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 16px;
+}
+
+.ref-highlight {
+    color: #e85d3d;
+    font-weight: 500;
+    font-size: 1.05em; /* Mod: Slightly bigger */
+}
+
+.ref-ul {
+    list-style: none;
+    margin-bottom: 32px;
+    margin-top: 16px;
+}
+
+.ref-ul li {
+    font-size: 19px; /* Mod: Slightly bigger */
+    line-height: 1.75;
+    color: #2a2a2a;
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+}
+
+.ref-ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: #111111;
+    font-size: 24px;
+}
+
+.ref-ul li b {
+    font-weight: 400;
+    color: #111111;
+    background: linear-gradient(transparent 60%, rgba(232, 93, 61, 0.15) 60%);
+}
+
+.ref-btn {
+    display: block;
+    background-color: #111111;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 20px 32px;
+    border: none;
+    cursor: pointer;
+    margin-top: 28px;
+    transition: opacity 0.2s;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.ref-btn:hover {
+    opacity: 0.85;
+}
+
+.ref-divider {
+    height: 1px;
+    background-color: #e6e2d8;
+    margin: 56px 0;
+}
+
+@media (max-width: 600px) {
+    .ref-container { padding: 0 20px 60px; }
+    .ref-h1 { font-size: 38px; }
+    .ref-h2 { font-size: 26px; } /* Mod: adjusted for mobile */
+    .ref-p, .ref-ul li { font-size: 17px; } /* Mod: adjusted for mobile */
+    .ref-btn { width: 100%; max-width: none; }
+}
+
 @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{
         animation-duration:.001ms !important;
@@ -1876,10 +2147,167 @@ html.is-loading .feat{
     }
     .hero-img,.marquee-track{animation:none !important}
     .hero-title .line-inner{transform:translateY(0) !important}
+    .btn-float-wrap{animation:none !important}
 }
 </style>
+
+<style>
+.skip-link{position:fixed;top:-60px;left:18px;z-index:4000;background:var(--ink);color:var(--bone);padding:13px 22px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:top .3s var(--ease)}
+.skip-link:focus{top:18px}
+#mainContent{outline:none}
+.wa-fab{position:fixed;bottom:88px;right:26px;z-index:1130;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 6px 16px rgba(14,14,14,.2);transition:transform .4s var(--ease),box-shadow .4s var(--ease),background-color .35s var(--ease)}
+.wa-fab:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 24px rgba(14,14,14,.28);background:#1fb857}
+.wa-fab i, .wa-fab svg{pointer-events:none}
+.install-pill{position:fixed;bottom:26px;left:26px;z-index:1140;display:flex;align-items:center;background:var(--ink);color:var(--bone);height:50px;opacity:0;transform:translateY(14px);pointer-events:none;visibility:hidden;transition:opacity .45s var(--ease),transform .45s var(--ease),visibility 0s .45s}
+.install-pill.show{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition:opacity .45s var(--ease),transform .45s var(--ease),visibility 0s 0s}
+.install-pill .install-go{display:inline-flex;align-items:center;gap:10px;height:100%;padding:0 10px 0 20px;color:var(--bone);font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:color .35s var(--ease)}
+.install-pill .install-go:hover{color:var(--accent)}
+.install-pill .install-x{display:inline-flex;align-items:center;justify-content:center;width:38px;height:100%;color:rgba(241,236,226,.45);font-size:13px;cursor:pointer;transition:color .35s var(--ease)}
+.install-pill .install-x:hover{color:var(--bone)}
+.cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:1300;background:var(--ink);color:var(--bone);display:flex;align-items:center;justify-content:center;gap:26px;padding:15px clamp(20px,4vw,40px);flex-wrap:wrap;transform:translateY(110%);transition:transform .7s var(--ease)}
+.cookie-bar.show{transform:translateY(0)}
+.cookie-bar p{font-size:12.5px;line-height:1.55;color:rgba(241,236,226,.72);max-width:660px;margin:0}
+.cookie-bar .ck-link{color:var(--bone);text-decoration:underline;text-underline-offset:3px;transition:color .3s}
+.cookie-bar .ck-link:hover{color:var(--accent)}
+.cookie-btn{padding:11px 22px;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background-color .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.cookie-btn.solid{background:var(--bone);color:var(--ink);border:1px solid var(--bone)}
+.cookie-btn.solid:hover{background:var(--accent);border-color:var(--accent);color:var(--bone)}
+.cookie-btn.ghost{background:transparent;color:rgba(241,236,226,.75);border:1px solid rgba(241,236,226,.3)}
+.cookie-btn.ghost:hover{border-color:var(--bone);color:var(--bone)}
+.legal-section{position:fixed;inset:0;z-index:1200;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;background:var(--bone);color:var(--ink);visibility:hidden;clip-path:inset(100% 0 0 0);transition:clip-path 1s var(--ease),visibility 0s 1s;will-change:clip-path;-webkit-overflow-scrolling:touch}
+.legal-section.open{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path 1s var(--ease),visibility 0s 0s}
+.legal-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,var(--paper-line) 1px,transparent 1px);background-size:12.5% 100%;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+.legal-content{position:relative;z-index:1;width:100%;max-width:780px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(24px,4vw,56px) 100px}
+.legal-kicker{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.legal-kicker::before{content:'';width:34px;height:1px;background:var(--ink)}
+.legal-title{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(38px,5.6vw,68px);line-height:.95;letter-spacing:-.025em;margin-bottom:clamp(28px,4vh,44px);padding-bottom:clamp(22px,3vh,32px);border-bottom:1px solid var(--ink)}
+.legal-body h3{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(19px,2vw,24px);letter-spacing:-.01em;color:var(--ink);margin:34px 0 12px}
+.legal-body p{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:14px}
+.legal-body ul{margin:0 0 16px;padding-left:22px;list-style:disc}
+.legal-body li{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:8px}
+.legal-body strong{color:var(--ink);font-weight:600}
+.legal-body a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(230,69,34,.4);transition:border-color .3s}
+.legal-body a:hover{border-color:var(--accent)}
+.legal-foot{margin-top:44px;padding-top:24px;border-top:1px dashed var(--line-2);font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.legal-foot a{color:var(--accent);text-decoration:none}
+@media (max-width:768px){
+    .wa-fab{bottom:80px;right:18px;width:52px;height:52px;font-size:24px}
+    .install-pill{bottom:18px;left:18px}
+    .cookie-bar{gap:14px;padding:14px 20px;justify-content:flex-start}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GRIX",
+  "alternateName": "GRIX Bangladesh",
+  "url": "https://grixbd.github.io/explore-on/grix.html",
+  "logo": "https://grixbd.github.io/explore-on/grix-logo2.jpg",
+  "slogan": "We offer you what you deserve",
+  "foundingDate": "2026",
+  "email": "grixbd1900@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "BD"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/1H8R2LNAnH/",
+    "https://www.instagram.com/_grixbd",
+    "https://youtube.com/@grixbd"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does delivery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inside Dhaka: 1–2 working days. Outside Dhaka but within Bangladesh: 2–4 working days. We ship to all 64 districts and send you a tracking number as soon as your order leaves our studio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer customisation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — it's the reason we exist. Every piece can be customised with initials, sleeve length, colour, or a small embroidery detail. Message us on WhatsApp before ordering and we'll walk you through the options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's your return policy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If it doesn't fit or isn't what you expected, send it back within 7 days of delivery — unworn, in its original packaging — and we'll refund or exchange it. Custom-embroidered pieces are final sale, since they're made specifically for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are your pieces unisex?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every piece is designed unisex and cut to work on any body. Our size chart is generous — if you're between sizes, we recommend sizing down for a cleaner fit or sizing up for something roomier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept bKash, Nagad, and cash on delivery. If you need another payment option, contact us and we'll discuss what's available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are you based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dhaka, Bangladesh. Everything is designed, cut, and packed here — we don't outsource. If you're nearby and want to see the pieces in person, message us and we can arrange a studio visit."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "GRIX",
+  "description": "GRIX is a premium unisex clothing brand from Dhaka, Bangladesh, offering quality, customisation, and fast delivery across all 64 districts.",
+  "url": "https://grixbd.github.io/explore-on/grix.html",
+  "image": "https://grixbd.github.io/explore-on/grix-logo2.jpg",
+  "email": "grixbd1900@gmail.com",
+  "priceRange": "৳",
+  "currenciesAccepted": "BDT",
+  "paymentAccepted": "bKash, Nagad, Cash on Delivery",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "BD"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Bangladesh"
+  },
+  "sameAs": [
+    "https://www.facebook.com/share/1H8R2LNAnH/",
+    "https://www.instagram.com/_grixbd",
+    "https://youtube.com/@grixbd"
+  ]
+}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#mainContent">Skip to content</a>
 
 <noscript>
     <style>
@@ -1910,11 +2338,13 @@ html.is-loading .feat{
 <div class="root-container">
 
     <div class="main-slide" id="mainSlide">
-        <div class="scroll-viewport">
+        <div class="scroll-viewport" id="mainContent" tabindex="-1">
 
             <section class="hero">
                 <header class="hero-header">
-                    <div class="logo">GRIX</div>
+                    <div class="logo">
+                        <img src="grix-logo.jpg" alt="GRIX" class="logo-img">
+                    </div>
                     <div class="hero-meta">Dhaka · Bangladesh · Est. 2026</div>
                     <nav class="hero-nav" aria-label="Main navigation">
                         <button type="button" class="contact-link">Contact</button>
@@ -1931,7 +2361,7 @@ html.is-loading .feat{
                         <div class="kicker">
                             <span class="dash"></span>
                             <span class="num">01</span>
-                            <span>Find us</span>
+                            <span>SS / 26 collection</span>
                         </div>
 
                         <h1 class="hero-title">
@@ -1946,10 +2376,12 @@ html.is-loading .feat{
                         </p>
 
                         <div class="hero-cta">
-                            <button class="btn-primary" type="button">
-                                <span>Explore us</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <div class="btn-float-wrap">
+                                <button class="btn-primary btn-primary-lg referral-open" type="button">
+                                    <span>Get some free</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
                             <button type="button" class="btn-ghost contact-link">Contact</button>
                         </div>
                     </div>
@@ -2018,13 +2450,70 @@ html.is-loading .feat{
                 </div>
             </section>
 
-            <section class="section-block" id="faq">
+            <section class="section-block" id="stay-in-loop">
                 <div class="section-inner">
                     <div class="section-head">
                         <div>
                             <div class="section-kicker">
                                 <span class="dash"></span>
                                 <span class="num">02</span>
+                                <span>Follow / Stay in the loop</span>
+                            </div>
+                            <h2 class="section-title">Stay in <em>the loop.</em></h2>
+                        </div>
+                        <div class="section-meta">
+                            <span>Instagram · Facebook · YouTube</span>
+                            <span>@_grixbd</span>
+                        </div>
+                    </div>
+
+                    <div class="social-list">
+                        <a href="https://www.facebook.com/share/1H8R2LNAnH/" target="_blank" rel="noopener noreferrer" class="social-item">
+                            <span class="idx">01</span>
+                            <div class="body">
+                                <span class="name">
+                                    <span class="ico"><i class="fab fa-facebook-f"></i></span>
+                                    Facebook
+                                </span>
+                                <span class="desc">Follow our page <span class="handle">GRIX Bangladesh</span></span>
+                            </div>
+                            <span class="arrow">Visit <i class="fas fa-arrow-right"></i></span>
+                        </a>
+
+                        <a href="https://www.instagram.com/_grixbd?stkn=MWl6a2tpemt4dXc0cg==" target="_blank" rel="noopener noreferrer" class="social-item">
+                            <span class="idx">02</span>
+                            <div class="body">
+                                <span class="name">
+                                    <span class="ico"><i class="fab fa-instagram"></i></span>
+                                    Instagram
+                                </span>
+                                <span class="desc">Follow our feed <span class="handle">@_grixbd</span></span>
+                            </div>
+                            <span class="arrow">Visit <i class="fas fa-arrow-right"></i></span>
+                        </a>
+
+                        <a href="https://youtube.com/@grixbd" target="_blank" rel="noopener noreferrer" class="social-item">
+                            <span class="idx">03</span>
+                            <div class="body">
+                                <span class="name">
+                                    <span class="ico"><i class="fab fa-youtube"></i></span>
+                                    YouTube
+                                </span>
+                                <span class="desc">Subscribe to our channel <span class="handle">@grixbd</span></span>
+                            </div>
+                            <span class="arrow">Visit <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block" id="faq">
+                <div class="section-inner">
+                    <div class="section-head">
+                        <div>
+                            <div class="section-kicker">
+                                <span class="dash"></span>
+                                <span class="num">03</span>
                                 <span>Info / FAQ</span>
                             </div>
                             <h2 class="section-title">Have <em>questions!</em></h2>
@@ -2042,7 +2531,7 @@ html.is-loading .feat{
                                 <span class="faq-icon"></span>
                             </summary>
                             <div class="faq-a">
-                                Inside Dhaka: 1–2 working days. Outside Dhaka but within Bangladesh: 2–4 working days. We ship to all 64 districts and send you a tracking number as soon as your order leaves our studio.
+                                Inside Dhaka: 2–3 working days. Outside Dhaka: 3–4 working days. We ship to all 64 districts and send you a tracking number as soon as your order leaves our studio.
                             </div>
                         </details>
 
@@ -2082,7 +2571,7 @@ html.is-loading .feat{
                                 <span class="faq-icon"></span>
                             </summary>
                             <div class="faq-a">
-                                We accept bKash, Nagad, and cash on delivery also we will arrange a payment method that works for you.
+                                We accept bKash, Nagad, and cash on delivery. If you need another payment option, contact us and we’ll discuss what’s available.
                             </div>
                         </details>
 
@@ -2113,6 +2602,7 @@ html.is-loading .feat{
                             <li><a href="#faq">FAQ</a></li>
                             <li><a href="#faq-delivery">Shipping</a></li>
                             <li><a href="#faq-returns">Returns</a></li>
+                            <li><a href="#" class="referral-open">Referral &amp; Premium</a></li>
                             <li><a href="mailto:grixbd1900@gmail.com?subject=Support%20Request%20%E2%80%94%20GRIX&body=Hi%20GRIX%20team%2C%0A%0AI%27d%20like%20some%20help%20with%3A%0A%0A">Contact</a></li>
                         </ul>
                     </div>
@@ -2123,7 +2613,11 @@ html.is-loading .feat{
                             <li><a href="https://www.facebook.com/share/1H8R2LNAnH/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i>Facebook</a></li>
                             <li><a href="https://www.instagram.com/_grixbd?stkn=MWl6a2tpemt4dXc0cg==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>Instagram</a></li>
                             <li><a href="https://youtube.com/@grixbd" target="_blank" rel="noopener"><i class="fab fa-youtube"></i>YouTube</a></li>
-                            <li><a href="https://wa.me/qr/ZMV2QUBM3YKEG1" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+                            <li>
+                                <a href="https://wa.me/qr/ZMV2QUBM3YKEG1" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -2131,11 +2625,11 @@ html.is-loading .feat{
                 <div class="footer-bottom">
                     <span>© 2026 GRIX Bangladesh. All rights reserved.</span>
                     <span class="footer-meta">
-                        <a href="#">Terms</a>
+                        <a href="#" data-legal="terms">Terms</a>
                         <span class="footer-sep">·</span>
-                        <a href="#">Privacy</a>
+                        <a href="#" data-legal="privacy">Privacy</a>
                         <span class="footer-sep">·</span>
-                        <a href="#">Cookies</a>
+                        <a href="#" data-legal="cookies">Cookies</a>
                     </span>
                 </div>
             </footer>
@@ -2152,19 +2646,19 @@ html.is-loading .feat{
         </div>
 
         <nav class="panel-nav">
-            <button type="button" class="panel-link panel-explore" style="--i:0">
-                <span class="idx">01</span>
-                <span class="name">Explore</span>
-                <span class="arrow">→</span>
-            </button>
-            <button type="button" class="panel-link about-link" style="--i:1">
+            <button type="button" class="panel-link about-link" style="--i:0">
                 <span class="idx">02</span>
                 <span class="name">About</span>
                 <span class="arrow">→</span>
             </button>
-            <button type="button" class="panel-link contact-link" style="--i:2">
+            <button type="button" class="panel-link contact-link" style="--i:1">
                 <span class="idx">03</span>
                 <span class="name">Contact</span>
+                <span class="arrow">→</span>
+            </button>
+            <button type="button" class="panel-link referral-open" style="--i:2">
+                <span class="idx">04</span>
+                <span class="name">Referral</span>
                 <span class="arrow">→</span>
             </button>
         </nav>
@@ -2176,92 +2670,76 @@ html.is-loading .feat{
             </div>
             <div class="row">
                 <span class="lbl">Based in</span>
-                <a href="#">Dhaka, Bangladesh</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Dhaka%2C%20Bangladesh" target="_blank" rel="noopener noreferrer">Dhaka, Bangladesh</a>
             </div>
         </div>
     </aside>
 
-    <section class="explore-section" id="exploreSection" role="dialog" aria-modal="true" aria-label="Explore us">
-        <header class="section-header">
-            <div class="logo">GRIX</div>
-            <nav class="hero-nav" aria-label="Explore section navigation">
-                <button type="button" class="contact-link">Contact</button>
-                <button type="button" class="about-link">About</button>
-            </nav>
-            <button class="close-btn" id="exploreClose" type="button" aria-label="Close explore">
-                <span></span><span></span>
-            </button>
-        </header>
+    
 
-        <div class="explore-content">
-            <div class="ed-head rv" style="--d:.15s">
-                <div>
-                    <div class="kicker">Stay connected</div>
-                    <h1 class="ed-title">Find <em>us.</em></h1>
+    <section class="referral-section" id="referralSection" role="dialog" aria-modal="true" aria-label="Referral & Premium">
+        <div class="ref-container" lang="bn">
+
+            <header class="ref-header" lang="en">
+                <div class="ref-logo">GRIX<span>®</span></div>
+                <button class="ref-close-btn" id="referralClose" type="button" aria-label="Close referral">✕</button>
+            </header>
+
+            <div class="ref-main">
+                <h2 class="ref-h1 rv" style="--d:.1s" lang="en">Referral Plan</h2>
+
+                <p class="ref-p rv" style="--d:.2s">মাত্র <span class="ref-highlight">১০ টাকায়</span> কিনে নিন আপনার নিজের রেফারেল নম্বর! বন্ধুদের সাথে শেয়ার করুন আর পেয়ে যান দারুণ সব পুরস্কার।</p>
+                <p class="ref-p rv" style="--d:.25s">আপনার রেফারেল নম্বরটি যতজন ব্যবহার করবে, আপনি তত বেশি উপহার পাবে—</p>
+
+                <ul class="ref-ul rv" style="--d:.3s">
+                    <li><b>৩ রেফারেল:</b> পরের অর্ডারে সোজা ১০% ছাড়!</li>
+                    <li><b>৫ রেফারেল:</b> পরের অর্ডারে ২০% ছাড় + ফ্রি ডেলিভারি!</li>
+                    <li><b>১০ রেফারেল:</b> সম্পূর্ণ ফ্রি প্রোডাক্ট + ফ্রি ডেলিভারি!</li>
+                </ul>
+
+                <p class="ref-p rv" style="--d:.35s; margin-top: 36px;">আর আপনার রেফারেল ব্যবহারকারী বন্ধুটি পাবে প্রতিটি প্রোডাক্টে <span class="ref-highlight">৫% ছাড়!</span></p>
+
+                <h2 class="ref-h2 rv" style="--d:.4s">শর্তাবলী</h2>
+                <ul class="ref-ul rv" style="--d:.45s">
+                    <li>রেফারেল পয়েন্ট ব্যবহার করার সাথে সাথেই পয়েন্ট ০ হয়ে যাবে, পুনরায় জমাতে হবে।</li>
+                    <li>ফ্রি ডেলিভারি বা গিফট প্রোডাক্টের ঠিকানা অর্ডারের আগেই সিলেক্ট করতে হবে; পরে তা পরিবর্তন করা যাবে না।</li>
+                    <li>Buyer প্রোডাক্ট কেনার ৭ দিনের মধ্যে রিটার্ন না করলেই কেবল আপনার রেফারেল পয়েন্ট যোগ হবে।</li>
+                    <li>Buyer প্রোডাক্ট রিটার্ন করলে কোনো পয়েন্ট যোগ হবে না।</li>
+                </ul>
+
+                <div class="rv" style="--d:.5s">
+                    <a class="ref-btn" href="https://tally.so/r/NqpW4b" target="_blank" rel="noopener noreferrer" lang="en">
+                        GET YOUR REFERRAL NUMBER
+                    </a>
                 </div>
-                <div class="ed-meta">
-                    <span>FOLLOW / SUBSCRIBE</span>
-                    <span>Our</span>
-                    <span>GRIX</span>
+
+                <div class="ref-divider rv" style="--d:.6s"></div>
+
+                <h2 class="ref-h1 rv" style="--d:.65s" lang="en">Premium Plan</h2>
+
+                <p class="ref-p rv" style="--d:.7s">চাচ্ছেন সারা বছর ধরে আনলিমিটেড ছাড়? নিন আমাদের <span class="ref-highlight">MEMBERSHIP</span>।</p>
+
+                <h2 class="ref-h2 rv" style="--d:.75s; margin-top: 24px;">মেম্বারশিপ ফি: <span class="ref-highlight">মাত্র ১৫০৳</span></h2>
+
+                <ul class="ref-ul rv" style="--d:.8s; margin-top: 12px; margin-bottom: 0;">
+                    <li>পুরো <b>১ বছরের জন্য</b> আনলিমিটেড ছাড়।</li>
+                    <li>প্রতিটি ড্রেসের উপর পাচ্ছেন <b>১৫% এর বেশি ছাড়!</b></li>
+                </ul>
+
+                <div class="rv" style="--d:.85s">
+                    <a class="ref-btn" href="https://tally.so/r/kbbNrZ" target="_blank" rel="noopener noreferrer" lang="en">
+                        GET PREMIUM MEMBERSHIP
+                    </a>
                 </div>
-            </div>
-
-            <div class="social-list">
-                <a href="https://www.facebook.com/share/1H8R2LNAnH/" target="_blank" rel="noopener noreferrer"
-                   class="social-item rv" style="--d:.3s">
-                    <span class="idx">01</span>
-                    <div class="body">
-                        <span class="name">
-                            <span class="ico"><i class="fab fa-facebook-f"></i></span>
-                            Facebook
-                        </span>
-                        <span class="desc">Follow our page <span class="handle">GRIX Bangladesh</span></span>
-                    </div>
-                    <span class="arrow">Visit <i class="fas fa-arrow-right"></i></span>
-                </a>
-
-                <a href="https://www.instagram.com/_grixbd?stkn=MWl6a2tpemt4dXc0cg==" target="_blank" rel="noopener noreferrer"
-                   class="social-item rv" style="--d:.4s">
-                    <span class="idx">02</span>
-                    <div class="body">
-                        <span class="name">
-                            <span class="ico"><i class="fab fa-instagram"></i></span>
-                            Instagram
-                        </span>
-                        <span class="desc">Follow our feed <span class="handle">@_grixbd</span></span>
-                    </div>
-                    <span class="arrow">Visit <i class="fas fa-arrow-right"></i></span>
-                </a>
-
-                <a href="https://youtube.com/@grixbd" target="_blank" rel="noopener noreferrer"
-                   class="social-item rv" style="--d:.5s">
-                    <span class="idx">03</span>
-                    <div class="body">
-                        <span class="name">
-                            <span class="ico"><i class="fab fa-youtube"></i></span>
-                            YouTube
-                        </span>
-                        <span class="desc">Subscribe to our channel <span class="handle">@grixbd</span></span>
-                    </div>
-                    <span class="arrow">Visit <i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-
-            <div class="support-box rv" style="--d:.65s">
-                <div>
-                    <div class="lbl">— Customer care</div>
-                    <div class="h">Need help? Write to our support center.</div>
-                </div>
-                <a href="mailto:grixbd1900@gmail.com?subject=Customize%20Design%20Inquiry&body=Hi%20GRIX%20team%2C%0A%0AI%27d%20like%20to%20customize%20a%20piece.%20Here%27s%20what%20I%20have%20in%20mind%3A%0A%0A-%20Item%3A%20%0A-%20Color%2Ffabric%3A%20%0A-%20Size%3A%20%0A-%20Custom%20detail%3A%20%0A%0AThanks%21" class="link">
-                    Contact support <i class="fas fa-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
 
     <section class="about-section" id="aboutSection" role="dialog" aria-modal="true" aria-label="About us">
         <header class="section-header">
-            <div class="logo">GRIX</div>
+            <div class="logo">
+                <img src="grix-logo.jpg" alt="GRIX" class="logo-img">
+            </div>
             <nav class="hero-nav" aria-label="About section navigation">
                 <button type="button" class="contact-link">Contact</button>
                 <button type="button" class="about-link">About</button>
@@ -2314,18 +2792,18 @@ html.is-loading .feat{
             <div class="stats-grid rv" style="--d:.5s">
                 <div class="stat-card">
                     <div class="stat-idx">001 — Atelier</div>
-                    <div class="stat-num"><span data-count="100">0</span><em>+</em></div>
-                    <div class="stat-label">Products</div>
+                    <div class="stat-num"><span>Made</span></div>
+                    <div class="stat-label">Customisable clothing</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-idx">002 — Community</div>
-                    <div class="stat-num"><span data-count="2">0</span><em>K+</em></div>
-                    <div class="stat-label">Clients</div>
+                    <div class="stat-idx">002 — Style</div>
+                    <div class="stat-num"><span>Unisex</span></div>
+                    <div class="stat-label">Made for everyone</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-idx">003 — Bangladesh</div>
-                    <div class="stat-num"><span data-count="64">0</span><em>+</em></div>
-                    <div class="stat-label">Districts</div>
+                    <div class="stat-num"><span>64</span><em></em></div>
+                    <div class="stat-label">Districts covered</div>
                 </div>
             </div>
         </div>
@@ -2333,7 +2811,9 @@ html.is-loading .feat{
 
     <section class="contact-section" id="contactSection" role="dialog" aria-modal="true" aria-label="Contact us">
         <header class="section-header">
-            <div class="logo">GRIX</div>
+            <div class="logo">
+                <img src="grix-logo.jpg" alt="GRIX" class="logo-img">
+            </div>
             <nav class="hero-nav" aria-label="Contact section navigation">
                 <button type="button" class="contact-link">Contact</button>
                 <button type="button" class="about-link">About</button>
@@ -2362,7 +2842,9 @@ html.is-loading .feat{
                     <span class="idx">01</span>
                     <div class="body">
                         <span class="name">
-                            <span class="ico"><i class="fab fa-whatsapp"></i></span>
+                            <span class="ico">
+                                <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            </span>
                             WhatsApp
                         </span>
                         <span class="desc">Chat with us instantly — fastest reply</span>
@@ -2386,7 +2868,7 @@ html.is-loading .feat{
             <div class="copy-row rv" style="--d:.55s">
                 <span class="copy-lbl">— Prefer to paste it later?</span>
                 <button class="copy-btn" id="copyEmailBtn" type="button">
-                    <span id="copyEmailTxt">Copy our email</span>
+                    <span id="copyEmailTxt" role="status" aria-live="polite">Copy our email</span>
                     <i class="fas fa-copy"></i>
                 </button>
             </div>
@@ -2407,6 +2889,38 @@ html.is-loading .feat{
     <button class="to-top" id="toTop" type="button" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <a class="wa-fab" href="https://wa.me/qr/ZMV2QUBM3YKEG1" target="_blank" rel="noopener noreferrer" aria-label="Chat with GRIX on WhatsApp">
+        <svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <div class="install-pill" id="installPill">
+        <button type="button" class="install-go" id="installGo"><i class="fas fa-download" aria-hidden="true"></i>Install GRIX app</button>
+        <button type="button" class="install-x" id="installDismiss" aria-label="Dismiss install prompt">✕</button>
+    </div>
+
+    <div class="cookie-bar" id="cookieBar" role="region" aria-label="Cookie consent">
+        <p>GRIX uses no tracking cookies. We only save your preference in your browser. Read our <a href="#" class="ck-link" data-legal="cookies">cookie policy</a>.</p>
+        <button type="button" class="cookie-btn solid" id="cookieAccept">Accept</button>
+        <button type="button" class="cookie-btn ghost" id="cookieDecline">Decline</button>
+    </div>
+
+    <section class="legal-section" id="legalSection" role="dialog" aria-modal="true" aria-label="Legal information">
+        <header class="section-header">
+            <div class="logo">
+                <img src="grix-logo.jpg" alt="GRIX" class="logo-img">
+            </div>
+            <button class="close-btn" id="legalClose" type="button" aria-label="Close legal information">
+                <span></span><span></span>
+            </button>
+        </header>
+        <div class="legal-content">
+            <div class="legal-kicker">Legal</div>
+            <h1 class="legal-title" id="legalTitle">Terms</h1>
+            <div class="legal-body" id="legalBody"></div>
+            <p class="legal-foot">Questions? <a href="mailto:grixbd1900@gmail.com">grixbd1900@gmail.com</a></p>
+        </div>
+    </section>
 
 </div>
 
@@ -2458,7 +2972,7 @@ html.is-loading .feat{
     }
 
     if (heroImg) {
-        if (heroImg.complete && heroImg.naturalWidth > 0) {
+        if (heroImg.complete) {
             onImageReady();
         } else {
             heroImg.addEventListener('load', () => {
@@ -2526,18 +3040,16 @@ const sidePanel      = document.getElementById('sidePanel');
 const scrollViewport = document.querySelector('.scroll-viewport');
 const progressBar    = document.getElementById('scrollProgress');
 const toTopBtn       = document.getElementById('toTop');
-const exploreBtn     = document.querySelector('.btn-primary');
-const exploreSection = document.getElementById('exploreSection');
-const exploreClose   = document.getElementById('exploreClose');
 const aboutLinks     = document.querySelectorAll('.about-link');
 const aboutSection   = document.getElementById('aboutSection');
 const aboutClose     = document.getElementById('aboutClose');
 const contactLinks   = document.querySelectorAll('.contact-link');
 const contactSection = document.getElementById('contactSection');
 const contactClose   = document.getElementById('contactClose');
-const panelExplore   = document.querySelector('.panel-explore');
+const referralSection = document.getElementById('referralSection');
+const referralClose   = document.getElementById('referralClose');
 
-const overlays = [exploreSection, aboutSection, contactSection];
+const overlays = [aboutSection, contactSection, referralSection];
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -2545,7 +3057,10 @@ let currentSlide = 'home';
 let isNavigating = false;
 let lastFocused  = null;
 
-history.replaceState({ slide: 'home' }, '', '');
+function safeHistory(method, state) {
+    try { history[method](state, '', ''); } catch (_) {}
+}
+safeHistory('replaceState', { slide: 'home' });
 
 function updateAriaExpanded(expanded) {
     hamburger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
@@ -2558,9 +3073,9 @@ function setBackdropInert(on) {
 }
 
 function closeAllSlides() {
-    exploreSection.classList.remove('open');
     aboutSection.classList.remove('open');
     contactSection.classList.remove('open');
+    referralSection.classList.remove('open');
     hamburger.classList.remove('active');
     mainSlide.classList.remove('menu-open');
     sidePanel.classList.remove('open');
@@ -2573,7 +3088,9 @@ function closeAllSlides() {
 }
 
 const statNumbers = document.querySelectorAll('.stat-num span[data-count]');
+let statsRun = 0;
 function animateStats() {
+    const run = ++statsRun;
     statNumbers.forEach(el => {
         const target = parseFloat(el.dataset.count) || 0;
         const duration = 1400;
@@ -2582,7 +3099,7 @@ function animateStats() {
             const p = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - p, 3);
             el.textContent = Math.round(target * eased);
-            if (p < 1) requestAnimationFrame(step);
+            if (p < 1 && run === statsRun) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
     });
@@ -2591,11 +3108,12 @@ function animateStats() {
 function openSlideVisual(slideName) {
     closeAllSlides();
     lastFocused = document.activeElement;
+    if (lastFocused && sidePanel.contains(lastFocused)) lastFocused = hamburger;
 
     const targets = {
-        explore: exploreSection,
-        about:   aboutSection,
-        contact: contactSection
+        about:    aboutSection,
+        contact:  contactSection,
+        referral: referralSection
     };
     const target = targets[slideName];
     if (!target) return;
@@ -2605,12 +3123,13 @@ function openSlideVisual(slideName) {
     setBackdropInert(true);
 
     if (slideName === 'about') {
+        statsRun++;
         statNumbers.forEach(el => { el.textContent = '0'; });
-        setTimeout(animateStats, 520);
+        setTimeout(() => { if (aboutSection.classList.contains('open')) animateStats(); }, 520);
     }
 
     setTimeout(() => {
-        const btn = target.querySelector('.close-btn');
+        const btn = target.querySelector('.close-btn, .ref-close-btn');
         if (btn) btn.focus({ preventScroll: true });
     }, 620);
 }
@@ -2618,9 +3137,9 @@ function openSlideVisual(slideName) {
 function openSlide(slideName) {
     if (currentSlide === slideName) return;
     if (currentSlide === 'home') {
-        history.pushState({ slide: slideName }, '', '');
+        safeHistory('pushState', { slide: slideName });
     } else {
-        history.replaceState({ slide: slideName }, '', '');
+        safeHistory('replaceState', { slide: slideName });
     }
     openSlideVisual(slideName);
     currentSlide = slideName;
@@ -2633,9 +3152,12 @@ function closeSlide() {
     closeAllSlides();
     if (history.state && history.state.slide !== 'home') {
         history.back();
+        setTimeout(() => {
+            if (isNavigating) { currentSlide = 'home'; isNavigating = false; }
+        }, 600);
     } else {
         currentSlide = 'home';
-        history.replaceState({ slide: 'home' }, '', '');
+        safeHistory('replaceState', { slide: 'home' });
         isNavigating = false;
     }
 }
@@ -2695,6 +3217,8 @@ function openOverlay() {
     if (reduceMotion || !('IntersectionObserver' in window)) return;
 
     const revealEls = [
+        document.querySelector('#stay-in-loop .section-head'),
+        ...document.querySelectorAll('#stay-in-loop .social-item'),
         document.querySelector('#faq .section-head'),
         ...document.querySelectorAll('.faq-item'),
         document.querySelector('.footer-brand'),
@@ -2811,13 +3335,20 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-exploreBtn.addEventListener('click', () => openSlide('explore'));
-exploreClose.addEventListener('click', () => closeSlide());
+// Placeholder links (href="#") must not jump the page or pollute history
+document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href="#"]');
+    if (a) e.preventDefault();
+});
 
-if (panelExplore) {
-    panelExplore.addEventListener('click', () => openSlide('explore'));
-}
+// Hero button "Get some free" opens referral
+document.querySelectorAll('.referral-open').forEach(btn => {
+    btn.addEventListener('click', () => openSlide('referral'));
+});
+if (referralClose) referralClose.addEventListener('click', () => closeSlide());
 
+
+// About / Contact triggers
 aboutLinks.forEach(link => {
     link.addEventListener('click', () => openSlide('about'));
 });
@@ -2828,5 +3359,206 @@ contactLinks.forEach(link => {
 });
 contactClose.addEventListener('click', () => closeSlide());
 </script>
+
+<script>
+(function(){
+    window.GRIX_SENTRY_DSN = '';
+    window.GRIX_ERRORS = [];
+    let sentryStarted = false;
+    function startSentry(){
+        if (sentryStarted || !window.GRIX_SENTRY_DSN) return;
+        sentryStarted = true;
+        const s = document.createElement('script');
+        s.src = 'https://browser.sentry-cdn.com/8.47.0/bundle.min.js';
+        s.crossOrigin = 'anonymous';
+        s.onload = function(){
+            if (window.Sentry) {
+                window.Sentry.init({ dsn: window.GRIX_SENTRY_DSN, release: 'grix-web@1.0.0' });
+                window.GRIX_ERRORS.forEach(function(entry){
+                    window.Sentry.captureException(entry.error || new Error(entry.message));
+                });
+            }
+        };
+        document.head.appendChild(s);
+    }
+    function record(meta){
+        const entry = Object.assign({ at: new Date().toISOString() }, meta);
+        window.GRIX_ERRORS.push(entry);
+        if (window.GRIX_ERRORS.length > 50) window.GRIX_ERRORS.shift();
+        startSentry();
+    }
+    window.addEventListener('error', function(e){
+        record({ message: e.message, source: e.filename, line: e.lineno, col: e.colno, error: e.error });
+    });
+    window.addEventListener('unhandledrejection', function(e){
+        record({ message: 'Unhandled promise rejection', error: e.reason });
+    });
+})();
+
+(function(){
+    if (!('serviceWorker' in navigator)) return;
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+    window.addEventListener('load', function(){
+        navigator.serviceWorker.register('./service-worker.js').catch(function(){});
+    });
+})();
+
+(function(){
+    const pill = document.getElementById('installPill');
+    if (!pill) return;
+    const go = document.getElementById('installGo');
+    const dismissBtn = document.getElementById('installDismiss');
+    const KEY = 'grix-install-dismissed';
+    let promptEvent = null;
+    let dismissed = false;
+    try { dismissed = localStorage.getItem(KEY) === '1'; } catch (_) {}
+    function maybeShow(){
+        if (promptEvent && !dismissed) pill.classList.add('show');
+    }
+    window.addEventListener('beforeinstallprompt', function(e){
+        e.preventDefault();
+        promptEvent = e;
+        maybeShow();
+    });
+    window.addEventListener('appinstalled', function(){
+        promptEvent = null;
+        pill.classList.remove('show');
+    });
+    if (go) go.addEventListener('click', async function(){
+        if (!promptEvent) return;
+        promptEvent.prompt();
+        try { await promptEvent.userChoice; } catch (_) {}
+        promptEvent = null;
+        pill.classList.remove('show');
+    });
+    if (dismissBtn) dismissBtn.addEventListener('click', function(){
+        dismissed = true;
+        try { localStorage.setItem(KEY, '1'); } catch (_) {}
+        pill.classList.remove('show');
+    });
+})();
+
+(function(){
+    const banner = document.getElementById('cookieBar');
+    if (!banner) return;
+    const KEY = 'grix-cookie-consent';
+    const accept = document.getElementById('cookieAccept');
+    const decline = document.getElementById('cookieDecline');
+    let choice = null;
+    try { choice = localStorage.getItem(KEY); } catch (_) {}
+    if (choice) { banner.remove(); return; }
+    requestAnimationFrame(function(){
+        requestAnimationFrame(function(){ banner.classList.add('show'); });
+    });
+    function decide(value){
+        try { localStorage.setItem(KEY, value); } catch (_) {}
+        banner.classList.remove('show');
+        setTimeout(function(){ banner.remove(); }, 800);
+    }
+    if (accept) accept.addEventListener('click', function(){ decide('accepted'); });
+    if (decline) decline.addEventListener('click', function(){ decide('declined'); });
+})();
+
+(function(){
+    const LEGAL = {
+        terms: {
+            title: 'Terms of Service',
+            html: '<h3>The basics</h3>'
+                + '<p>GRIX is a Bangladesh-based unisex clothing brand operating from Dhaka. By browsing this website or placing an order with us, you agree to the terms below. They exist to keep things clear and fair for both sides.</p>'
+                + '<h3>Orders and customisation</h3>'
+                + '<p>Orders are placed through our WhatsApp or the forms we share. Every piece can be customised — initials, sleeve length, colour, or embroidery. Please confirm all customisation details with us <strong>before</strong> making payment, because customised orders enter production immediately after confirmation.</p>'
+                + '<h3>Pricing and payment</h3>'
+                + '<p>All prices are in Bangladeshi Taka (BDT). We accept <strong>bKash, Nagad, and cash on delivery</strong>. Prices may change without prior notice, but confirmed orders are always honoured at the price agreed at confirmation time.</p>'
+                + '<h3>Delivery</h3>'
+                + '<p>Inside Dhaka we deliver in 2–3 working days; outside Dhaka, 3–4working days. We ship to all 64 districts and share a tracking number as soon as your order leaves our studio. Courier delays beyond our control are not grounds for cancellation, but we will always help you follow up.</p>'
+                + '<h3>Returns and exchanges</h3>'
+                + '<ul>'
+                + '<li>Send items back within <strong>7 days of delivery</strong> — unworn and in original packaging — for a refund or exchange.</li>'
+                + '<li><strong>Custom-embroidered pieces are final sale</strong>, since they are made specifically for you.</li>'
+                + '<li>Refunds are processed to your bKash/Nagad number within 3 working days of receiving the return.</li>'
+                + '</ul>'
+                + '<h3>Intellectual property &amp; liability</h3>'
+                + '<p>All product photos, designs, and brand assets belong to GRIX and may not be used commercially without written permission. Our liability for any order is limited to the amount paid for that order.</p>'
+        },
+        privacy: {
+            title: 'Privacy Policy',
+            html: '<h3>What we collect</h3>'
+                + '<p>When you order, we collect only what delivery requires: your <strong>name, phone number, delivery address</strong>, and any size or customisation details you choose to share. This reaches us through WhatsApp or email — we do not run a database on this website.</p>'
+                + '<h3>How we use it</h3>'
+                + '<ul>'
+                + '<li>Producing and customising your order</li>'
+                + '<li>Delivery, through our courier partners</li>'
+                + '<li>Order support, returns, and warranty questions</li>'
+                + '<li>Referral point tracking, if you join the referral plan</li>'
+                + '</ul>'
+                + '<h3>What we do not do</h3>'
+                + '<p>This site runs <strong>no analytics, no advertising trackers, and no third-party profiling</strong>. We never sell or rent your information. Your conversations stay inside WhatsApp and email, exactly where you sent them.</p>'
+                + '<h3>Sharing with third parties</h3>'
+                + '<p>Courier partners receive your name, address, and phone number for delivery only. That is the only situation where your data leaves our hands, and only the minimum needed.</p>'
+                + '<h3>Your choices</h3>'
+                + '<p>You can ask us to correct or delete your information anytime — email <strong>grixbd1900@gmail.com</strong> or message us on WhatsApp, and we will handle it within 7 days.</p>'
+        },
+        cookies: {
+            title: 'Cookie Policy',
+            html: '<h3>What this site stores</h3>'
+                + '<p>Very little. This website sets <strong>no tracking cookies</strong>. It uses your browser&#39;s local storage for exactly two small preferences:</p>'
+                + '<ul>'
+                + '<li><strong>grix-cookie-consent</strong> — remembers your answer to the consent banner, so we stop asking.</li>'
+                + '<li><strong>grix-install-dismissed</strong> — remembers if you dismissed the &quot;install app&quot; prompt, so it stays away.</li>'
+                + '</ul>'
+                + '<h3>Third-party content</h3>'
+                + '<p>We load fonts from Google Fonts and icons from a public CDN. These providers may see your IP address as part of serving those files — the same happens on nearly every website — but they receive nothing about your orders or identity from us.</p>'
+                + '<h3>Clearing your preferences</h3>'
+                + '<p>You can wipe both saved preferences anytime by clearing site data for this website in your browser settings. The consent banner will simply reappear, and nothing else changes.</p>'
+                + '<h3>Questions</h3>'
+                + '<p>Anything unclear? Email <strong>grixbd1900@gmail.com</strong> and we will explain in plain language.</p>'
+        }
+    };
+    const section = document.getElementById('legalSection');
+    if (!section) return;
+    const title = document.getElementById('legalTitle');
+    const body = document.getElementById('legalBody');
+    const closeBtn = document.getElementById('legalClose');
+    let lastFocus = null;
+    function openLegal(key){
+        const data = LEGAL[key];
+        if (!data) return;
+        if (!lastFocus || !lastFocus.isConnected) lastFocus = document.activeElement;
+        title.textContent = data.title;
+        body.innerHTML = data.html;
+        section.classList.add('open');
+        section.scrollTop = 0;
+        setTimeout(function(){
+            closeBtn.focus({ preventScroll: true });
+        }, 400);
+    }
+    function closeLegal(){
+        section.classList.remove('open');
+        if (lastFocus && lastFocus.isConnected) lastFocus.focus({ preventScroll: true });
+        lastFocus = null;
+    }
+    document.querySelectorAll('[data-legal]').forEach(function(el){
+        el.addEventListener('click', function(e){
+            e.preventDefault();
+            openLegal(el.getAttribute('data-legal'));
+        });
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeLegal);
+    document.addEventListener('keydown', function(e){
+        if (!section.classList.contains('open')) return;
+        if (e.key === 'Escape') { closeLegal(); return; }
+        if (e.key === 'Tab') {
+            const focusables = section.querySelectorAll('a[href], button:not([disabled])');
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement;
+            const outside = !section.contains(active);
+            if (e.shiftKey && (active === first || outside)) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && (active === last || outside)) { e.preventDefault(); first.focus(); }
+        }
+    });
+})();
+</script>
 </body>
-</html>
+    </html>
